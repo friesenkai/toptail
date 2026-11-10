@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Philipp Imhof – Referenzen</title>
+    <style>
+      :root {
+        --bg: #f5f3ef;
+        --fg: #16181d;
+        --mut: #6a6f7a;
+        --card: #fff;
+        --line: #e2ded6;
+        --acc: #d6281f;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0f1115;
+          --fg: #f1efe9;
+          --mut: #9aa0ac;
+          --card: #181b22;
+          --line: #2a2e38;
+          --acc: #ff5a4d;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0f1115;
+        --fg: #f1efe9;
+        --mut: #9aa0ac;
+        --card: #181b22;
+        --line: #2a2e38;
+        --acc: #ff5a4d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.5 "Helvetica Neue",
+          Arial,
+          sans-serif;
+      }
+      header {
+        padding: 56px 6vw 24px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.6rem);
+        line-height: 1.05;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+      header p {
+        color: var(--mut);
+        margin: 0;
+        max-width: 80ch;
+      }
+      header b {
+        color: var(--acc);
+      }
+      section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 28px 0 8px;
+      }
+      .hd {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 0 6vw;
+        gap: 12px;
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+      .hd small {
+        color: var(--mut);
+      }
+      .nav button {
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--fg);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        margin-left: 6px;
+      }
+      .nav button:hover {
+        border-color: var(--acc);
+        color: var(--acc);
+      }
+      .track {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 16px 6vw 20px;
+        scroll-padding-inline: 6vw;
+        scrollbar-width: thin;
+      }
+      .card {
+        flex: 0 0 min(260px, 72vw);
+        scroll-snap-align: start;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--acc);
+      }
+      .th {
+        aspect-ratio: 16/10;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #fff;
+        position: relative;
+      }
+      .th span {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+      .th i {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: #111;
+        display: grid;
+        place-items: center;
+        font-style: normal;
+        font-size: 14px;
+      }
+      .bd {
+        padding: 12px 14px 14px;
+      }
+      .bd h3 {
+        font-size: 0.95rem;
+        margin: 0 0 4px;
+        line-height: 1.3;
+      }
+      .bd p {
+        margin: 0;
+        color: var(--mut);
+        font-size: 0.82rem;
+      }
+      footer {
+        max-width: 1200px;
+        margin: 32px auto 48px;
+        padding: 0 6vw;
+        color: var(--mut);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Philipp Imhof<br /><b>Referenzen</b></h1>
+      <p>
+        Kreativität 🤝🏻 Technik – Auswahl meiner Produktionen für MDR, ARD und
+        weitere Auftraggeber. Klick auf ein Bild öffnet den Beitrag.
+      </p>
+    </header>
+    <main id="m"></main>
+    <footer>Stand: November 2026 · Projekte für MCS TEAM GmbH</footer>
+    <script>
+      // Format je Zeile: Titel | Zeitraum | Format | optionaler direkter Link
+      var G = [
+        [
+          "Sport",
+          "MDR",
+          `Der Torhüter: Jürgen Croy – Die Nummer 1 der DDR|Sep.–Okt. 2026|Feature, 45 Min.|https://www.ardmediathek.de/video/der-torhueter-juergen-croy-die-nummer-1-der-ddr/der-torhueter-juergen-croy-die-nummer-1-der-ddr/mdr/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy81ZDczOGZmZC1jNGUyLTQ2MzMtYmE5NS0wOWQyZTAyNmVlMjU
+Die Nacht von Eindhoven – Das Trauma des HFC|Aug.–Sep. 2026|Feature, 30 Min.|https://www.mdr.de/sport/sport-im-osten/hallescher-fc-brandkatastrophe-eindhoven-,video-hfc-psv-100.html
+Goldfieber – Die Olympischen Sommerspiele in Montréal 1976|Juni 2026|Feature, 45 Min.|https://www.ardmediathek.de/video/goldfieber-ddr-sportler-im-medaillenrausch-die-olympischen-sommerspiele-in-montreal-1976/goldfieber-ddr-sportler-im-medaillenrausch-die-olympischen-sommerspiele-in-montreal-1976/mdr/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8xZTc0OGE0OC1lNWI2LTQxZjYtYWEwNy00ZTAyOGIxNzQ2Y2Q
+Friedensfahrt 1986|Apr. 2026|Beitrag, 17 Min.|https://www.mdr.de/sport/sport-im-osten/video-radsport-friedensfahrt-tschernobyl-100.html
+Schachtzig – 80 Jahre Wismut Aue|Feb. 2026|Feature, 45 Min.|https://www.mdr.de/tv/programm/sendung-1089994.html
+Blau-Weiß für die Ewigkeit – 60 Jahre 1. FC Magdeburg|Dez. 2025|Feature, 30 Min.|https://www.ardmediathek.de/video/sport-im-osten/blau-weiss-fuer-die-ewigkeit-60-jahre-1-fc-magdeburg/mdr/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC81NDg5NzAtNTI5MDU3
+Europapokal – Dynamo Dresden und die legendäre Saison 1988/1989|Okt.–Dez. 2025|Dokumentation, 90 Min.|https://www.ardmediathek.de/video/europapokal-dynamo-dresden-und-die-legendaere-saison-88-89/europapokal-dynamo-dresden-und-die-legendaere-saison-88-89/mdr/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC81NjczNTYtNTQ1NDM1
+Ich, Ede! Das Leben der Trainerlegende Eduard Geyer|Sep.–Okt. 2024|Feature, 45 Min. · MDR & RBB|https://www.youtube.com/watch?v=Ghvf9fAMuF8`,
+        ],
+        [
+          "Dokumentationen und Reportagen",
+          "MDR",
+          `Herrnhut – Kleinstadt auf Welterbe-Kurs|Juni 2024|Feature, 30 Min.|https://www.mdr.de/tv/programm/sendung-957472.html
+Mit dem Nachtzug nach Rijeka|Juli 2023–März 2024|Feature, 30 Min.|https://linktr.ee/Nachtzug
+Sachsen-Franken-Magistrale|Juli 2023|Langzeitdokumentation für die DB AG|https://ecm-mediathek-cdn.deutschebahn.com/resources/video7/video_embed.html?url=/cdnenhancedecmvidhls/db244071/2081312/video_config.json&autostart=false&defaultquality=0&mute=false&skin=content
+Das Zwingertrio – Eine Herrenpartie ins Glück|Dez. 2017|Dokumentation, 90 Min.|https://www.filmbooster.de/film/678258-zwingertrio-herrenpartie-ins-gluck/ubersicht/`,
+        ],
+        [
+          "Kurzfilme",
+          "Kurzfilm",
+          `WILD|Juni–Aug. 2025|Kurzfilm
+Neustadt By Night|Aug.–Okt. 2024|Kurzfilm
+The Spawn|Dez. 2022–Apr. 2023|Kurzfilm|https://www.youtube.com/watch?v=SQBFBi4Shxw
+Hotel Kalifornia|Feb.–Apr. 2022|Kurzfilm · Color Grading`,
+        ],
+        [
+          "Der Osten: Entdecke, wo du lebst",
+          "MDR",
+          `Luxus, Pomp und Prominenz – Das Grand Hotel Taschenbergpalais Dresden|Feb. 2024|Feature, 45 Min.|https://www.mdr.de/tv/programm/sendung-992088.html
+Bühne, Laufsteg, Einkaufsmeile – Die Leipziger Karl-Liebknecht-Straße|Mai 2023|Feature, 45 Min.|https://www.mdr.de/tv/programm/sendung-867714.html
+Feuer und Sand – Weißwasser und das Lausitzer Glas|Apr. 2023|Feature, 45 Min.|https://www.mdr.de/unternehmen/mittendrin/preview-weisswasser-glasmacher-stadt-100.html
+Moritzburg – Ein Kurfürst und drei Haselnüsse|Feb. 2023|Feature, 45 Min.|https://www.fernsehserien.de/der-osten-entdecke-wo-du-lebst/folgen/457-moritzburg-ein-kurfuerst-und-drei-haselnuesse-1619235
+Burg Kriebstein – Eine Ritterburg tanzt Rock’n’Roll|Aug. 2022|Feature, 45 Min.|https://www.mdr.de/tv/programm/sendung-777716.html
+Poesie in Sandstein|Okt. 2019|Feature, 45 Min.|https://www.fernsehserien.de/der-osten-entdecke-wo-du-lebst/folgen/338-poesie-in-sandstein-300-jahre-dresdner-zwinger-1327472
+Die Spur der Sandsteine|März 2018|Feature, 45 Min.|https://www.fernsehserien.de/der-osten-entdecke-wo-du-lebst/folgen/276-die-spur-der-sandsteine-von-der-saechsischen-schweiz-zu-den-grossbaustellen-der-welt-1177793`,
+        ],
+        [
+          "Exakt – Die Story",
+          "MDR",
+          `5 Jahre Grünes Gewölbe – Die Beute der Remmos|Nov. 2024|Feature, 30 Min.|https://www.ardmediathek.de/video/exakt-die-story/die-beute-der-remmos-auf-der-spur-der-juwelen-aus-dem-gruenen-gewoelbe-dresden/mdr/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80NzgzMTAtNDU4NTYx
+Feuer im Elbsandsteingebirge – Der Kampf um den Nationalpark|Aug. 2022|Feature, 30 Min.|https://www.mdr.de/tv/programm/sendung-781142.html
+Unerkannt und Unterschätzt – Wenn Kinder an Long-Covid leiden|Okt. 2021|Feature, 30 Min.`,
+        ],
+        [
+          "Unterwegs in Sachsen",
+          "MDR",
+          `Klangvolles Chemnitz – Eine Stadt gibt den Ton an|Juni 2025|Feature, 45 Min.|https://www.ardmediathek.de/video/unterwegs-in/klangvolles-chemnitz-eine-stadt-gibt-den-ton-an/mdr/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC81MTYyODQtNDk2MzUz
+Grünbach im Vogtland: Eisig kalt und feurig heiß|Feb. 2025|Feature, 30 Min.|https://www.mdr.de/tv/programm/sendung-1073836.html
+…zu den Holzwürmern in die Neißeaue|Juli 2022|Feature, 30 Min.|https://www.goerlitzer-anzeiger.de/goerlitz/kultur/19213_mdr-unterwegs-im-landkreis-goerlitz-neisseaue-und-turisede.html
+…zum Dorf der Baumeister|Aug. 2020|Feature, 30 Min.|https://www.mdr.de/video/mdr-videos/reportagen-dokus/video-unterwegs-in-sachsen-zu-dorf-der-baumeister-mdr-100.html`,
+        ],
+        [
+          "Unterwegs bei Sachsens Nachbarn",
+          "MDR",
+          `Mit Schwejk nach Budweis|Apr. 2024|Feature, 45 Min.|https://www.mdr.de/tv/programm/sendung-1013358.html
+Die kleinen Schwestern von Karlsbad – Tschechiens unbekannte Kurbäder|Okt. 2022|Feature, 45 Min. · Heute fahren wir nach…|https://www.mdr.de/tv/programm/bilder/bildergalerie-11868.html
+Schlesiens Tal der Schlösser|Juni 2022|Feature, 30 Min.
+Im königlichen Krakau|Nov. 2020|Feature, 30 Min.
+Unterwegs in Wien|Juni 2019|Feature, 30 Min.`,
+        ],
+        [
+          "hinReisend",
+          "MDR",
+          `Weihnachten in Dresden – Glitzerfahrt zum Christmas Garden Pillnitz|Nov. 2024|Episode, 9 Min.|https://www.youtube.com/watch?v=8JHlaxFZveE
+Sagenhaftes Vogtland: So lebt das Moosweibel|Nov. 2023|Episode, 17 Min.|https://www.youtube.com/watch?v=gBw9RfG6FJk
+Mit Dampflok von Chemnitz in die Sächsische Schweiz – Eisenbahn-Träume|Okt. 2023|Episode, 13 Min.|https://www.youtube.com/watch?v=rUrYaxmzRsA
+Abenteuer in der Oberlausitz: Safari, Floating House und Motorboot|Sep. 2023|Episode, 14 Min.|https://www.youtube.com/watch?v=ntr8wrp3q9w
+Sächsische Schweiz: Ein Wander-Wochenende im Kirnitzschtal|Sep. 2023|Episode, 18 Min.|https://www.youtube.com/watch?v=9uefv5-X6yA
+Blockline-Bike-Abenteuer im Erzgebirge|Aug. 2023|Episode, 16 Min.|https://www.youtube.com/watch?v=Dxv4Pn6I8vs
+FC Erzgebirge Aue: Was macht die Mannschaft in Schacht 371?|Aug. 2023|Episode, 11 Min.|https://www.youtube.com/watch?v=_01EH_1p7kw
+Dresden von der Elbe aus: 3 Tipps für Strand-Feeling|Juli 2023|Episode, 15 Min.|https://www.youtube.com/watch?v=5AywjuxDCqM
+Freizeitpark Plohn: Action, Achterbahn und Adrenalin – für jedermann|Juni 2023|Episode, 18 Min.|https://www.youtube.com/watch?v=N9NhE0PsGWQ
+Wasser-Action: Flyboard und E-Foil auf dem Störmthaler See|Juni 2023|Episode, 10 Min.|https://www.youtube.com/watch?v=dsdQ08Bm17I
+Action: Segeln und Kletterpark-Challenge am Berzi|Mai 2023|Episode, 11 Min.|https://www.youtube.com/watch?v=zexvmbJlMtg
+DIY in der Sächsischen Schweiz: Keramik, Schokolade und Sandstein|Apr. 2023|Episode, 13 Min.|https://www.youtube.com/watch?v=ayUVMSbAE4E
+Meißen an der Elbe: Ausflugstipps für DIY-Fans|Apr. 2023|Episode, 13 Min.|https://www.youtube.com/watch?v=sPro9bfS9lU
+Wandern im Zittauer Gebirge|März 2023|Episode, 15 Min.|https://www.youtube.com/watch?v=MEl1n0bKGwI`,
+        ],
+        [
+          "Live",
+          "Live",
+          `Volleyball der Frauen|seit 2021|Multikamera-Livestream mit Replay & Grafik
+Goldene Henne 2026|Sep. 2026|Administration Ü-Wagen & LiveEdit
+Internationales Deutsches Turnfest|Mai 2025|vMix-Liveregie, Bild- & Tonmischung`,
+        ],
+      ];
+      function hue(s) {
+        var h = 0;
+        for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+        return h;
+      }
+      var m = document.getElementById("m");
+      G.forEach(function (g) {
+        var rows = g[2].split("\n").map(function (r) {
+          return r.split("|");
+        });
+        var s = document.createElement("section");
+        s.innerHTML =
+          '<div class="hd"><div><h2></h2><small>' +
+          rows.length +
+          ' Beiträge</small></div><div class="nav"><button aria-label="zurück">‹</button><button aria-label="weiter">›</button></div></div><div class="track"></div>';
+        s.querySelector("h2").textContent = g[0];
+        var t = s.querySelector(".track");
+        rows.forEach(function (r) {
+          var a = document.createElement(r[3] ? "a" : "article");
+          a.className = "card";
+          if (r[3]) {
+            a.href = r[3];
+            a.target = "_blank";
+            a.rel = "noopener";
+          }
+          var h = hue(r[0]);
+          a.innerHTML =
+            '<div class="th" style="background:linear-gradient(135deg,hsl(' +
+            h +
+            ",55%,32%),hsl(" +
+            ((h + 50) % 360) +
+            ',60%,18%))"><span></span>' +
+            (r[3] ? "<i>▶</i>" : "") +
+            '</div><div class="bd"><h3></h3><p></p></div>';
+          a.querySelector(".th span").textContent = g[0];
+          a.querySelector("h3").textContent = r[0];
+          a.querySelector(".bd p").textContent = r[1] + " · " + r[2];
+          t.appendChild(a);
+        });
+        var b = s.querySelectorAll("button");
+        b[0].onclick = function () {
+          t.scrollBy({ left: -t.clientWidth * 0.8, behavior: "smooth" });
+        };
+        b[1].onclick = function () {
+          t.scrollBy({ left: t.clientWidth * 0.8, behavior: "smooth" });
+        };
+        m.appendChild(s);
+      });
+    </script>
+  </body>
+</html>
