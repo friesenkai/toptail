@@ -286,6 +286,36 @@ Goldene Henne 2026|Sep. 2026|Administration Ü-Wagen & LiveEdit
 Internationales Deutsches Turnfest|Mai 2025|vMix-Liveregie, Bild- & Tonmischung`,
         ],
       ];
+      // Fotos (werden über die Admin-Seite verwaltet): Titel -> Bild
+      var IMG = {
+      };
+      // YouTube-Video-ID aus Link ermitteln
+      function yt(u) {
+        var m =
+          u &&
+          u.match(/(?:youtube\.com\/watch\?(?:.*&)?v=|youtu\.be\/)([\w-]{11})/);
+        return m && m[1];
+      }
+      function setBg(el, url) {
+        el.style.background = 'center/cover no-repeat url("' + url + '")';
+      }
+      // Eigenes Foto hat Vorrang, sonst automatisch das YouTube-Vorschaubild
+      function setThumb(el, r) {
+        if (IMG[r[0]]) return setBg(el, IMG[r[0]]);
+        var id = yt(r[3]);
+        if (!id) return;
+        var base = "https://i.ytimg.com/vi/" + id + "/";
+        var im = new Image();
+        im.onload = function () {
+          if (im.naturalWidth < 200 && im.src.indexOf("maxres") > -1)
+            im.src = base + "mqdefault.jpg";
+          else setBg(el, im.src);
+        };
+        im.onerror = function () {
+          if (im.src.indexOf("maxres") > -1) im.src = base + "mqdefault.jpg";
+        };
+        im.src = base + "maxresdefault.jpg";
+      }
       function hue(s) {
         var h = 0;
         for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
@@ -317,10 +347,10 @@ Internationales Deutsches Turnfest|Mai 2025|vMix-Liveregie, Bild- & Tonmischung`
             h +
             ",55%,32%),hsl(" +
             ((h + 50) % 360) +
-            ',60%,18%))"><span></span>' +
+            ',60%,18%))">' +
             (r[3] ? "<i>▶</i>" : "") +
             '</div><div class="bd"><h3></h3><p></p></div>';
-          a.querySelector(".th span").textContent = g[0];
+          setThumb(a.querySelector(".th"), r);
           a.querySelector("h3").textContent = r[0];
           a.querySelector(".bd p").textContent = r[1] + " · " + r[2];
           t.appendChild(a);
